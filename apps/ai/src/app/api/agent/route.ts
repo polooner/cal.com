@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 
 import agent from "../../../utils/agent";
 import sendEmail from "../../../utils/sendEmail";
-import { verifyParseKey } from "../../../utils/verifyParseKey";
 
 // Allow agent loop to run for up to 5 minutes
 export const maxDuration = 300;
@@ -13,11 +12,11 @@ export const maxDuration = 300;
  * then sends the response to the user.
  */
 export const POST = async (request: NextRequest) => {
-  const verified = verifyParseKey(request.url);
+  // const verified = verifyParseKey(request.url);
 
-  if (!verified) {
-    return new NextResponse("Unauthorized", { status: 401 });
-  }
+  // if (!verified) {
+  //   return new NextResponse("Unauthorized", { status: 401 });
+  // }
 
   const json = await request.json();
 
